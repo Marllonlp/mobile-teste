@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portal do Funcionário</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: "#166534", // green-800
+                            light: "#22c55e", // green-500
+                            dark: "#14532d" // green-900
+                        },
+                        "background-light": "#f8fafc", // slate-50
+                        "background-dark": "#0f172a", // slate-900
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b", // slate-800
+                        "text-light": "#020617", // slate-950
+                        "text-dark": "#e2e8f0", // slate-200
+                        "text-muted-light": "#64748b", // slate-500
+                        "text-muted-dark": "#94a3b8", // slate-400
+                        "border-light": "#e2e8f0", // slate-200
+                        "border-dark": "#334155" // slate-700
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem", // 8px
+                        sm: "0.25rem", // 4px
+                        lg: "0.75rem", // 12px
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased">
+<div class="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm space-y-6">
+<h1 class="text-xl font-bold">Portal do Funcionário</h1>
+<div class="space-y-4">
+<h2 class="text-lg font-semibold">Controle de Folgas</h2>
+<div>
+<label class="sr-only" for="employee-select">Selecione seu nome</label>
+<select class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="employee-select">
+<option>Selecione seu nome</option>
+<option selected="">Bruno</option>
+</select>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-icons text-text-muted-light dark:text-text-muted-dark">chevron_left</span>
+</button>
+<h3 class="font-medium">setembro 2025</h3>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-icons text-text-muted-light dark:text-text-muted-dark">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center text-sm text-text-muted-light dark:text-text-muted-dark">
+<span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sab</span>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center text-sm">
+<span class="text-text-muted-light dark:text-text-muted-dark">25</span>
+<span class="text-text-muted-light dark:text-text-muted-dark">26</span>
+<span class="text-text-muted-light dark:text-text-muted-dark">27</span>
+<span class="text-text-muted-light dark:text-text-muted-dark">28</span>
+<span class="text-text-muted-light dark:text-text-muted-dark">29</span>
+<span class="text-text-muted-light dark:text-text-muted-dark">30</span>
+<span>1</span>
+<span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+<span>8</span><span class="bg-green-100 dark:bg-green-900/50 rounded-full p-2">9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+<span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+<span>21</span><span>22</span><span>23</span><span class="ring-2 ring-blue-500 rounded-full p-2">24</span><span>25</span><span class="relative p-2"><span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-red-500 rounded-full"></span>26</span><span>27</span>
+<span>28</span><span>29</span><span>30</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-xs items-center">
+<div class="flex items-center gap-2"><span class="w-3 h-3 bg-gray-300 dark:bg-gray-600 rounded-full"></span>Disponível</div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 bg-yellow-400 rounded-full"></span>Pendente</div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 bg-green-400 rounded-full"></span>Aprovada</div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 bg-red-400 rounded-full"></span>Reprovada</div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 bg-blue-400 rounded-full"></span>Ocupado</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Minhas Solicitações</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<p>08/09/2025</p>
+<span class="text-sm font-medium text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/50 px-2 py-1 rounded-full">aprovada</span>
+</div>
+<div class="flex justify-between items-center">
+<p>02/10/2025</p>
+<div class="flex items-center gap-2">
+<span class="text-sm font-medium text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/50 px-2 py-1 rounded-full">pendente</span>
+<button class="text-sm text-red-600 dark:text-red-400 hover:underline">Cancelar</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<h2 class="text-xl font-bold mb-2">Solicitar Folga</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark mb-4">Você está solicitando folga para o dia 25/09/2025.</p>
+<div>
+<label class="block text-sm font-medium text-text-light dark:text-text-dark" for="reason">Motivo (opcional)</label>
+<textarea class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="reason" rows="4"></textarea>
+</div>
+</div>
+<div class="mt-6">
+<div class="flex justify-end gap-4">
+<button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 dark:bg-gray-600 dark:text-gray-200 rounded-md hover:bg-gray-300 dark:hover:bg-gray-500">Cancelar</button>
+<button class="px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary-dark">Confirmar Solicitação</button>
+</div>
+<p class="text-xs text-center text-text-muted-light dark:text-text-muted-dark mt-4">Figura 6: Pop up confirmação para a folga</p>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm space-y-4">
+<h2 class="text-xl font-bold">Solicitações Pendentes</h2>
+<div class="space-y-4">
+<div class="p-4 border border-border-light dark:border-border-dark rounded-lg">
+<p class="font-bold">Christiano</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">10/09/2025</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1">Motivo: Consulta médica</p>
+<div class="flex gap-2 mt-4">
+<button class="flex-1 px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700">Aprovar</button>
+<button class="flex-1 px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700">Reprovar</button>
+</div>
+</div>
+<div class="p-4 border border-border-light dark:border-border-dark rounded-lg">
+<p class="font-bold">Wanderley</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">15/09/2025</p>
+<div class="flex gap-2 mt-4">
+<button class="flex-1 px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700">Aprovar</button>
+<button class="flex-1 px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700">Reprovar</button>
+</div>
+</div>
+<div class="p-4 border border-border-light dark:border-border-dark rounded-lg">
+<p class="font-bold">Bruno</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">02/10/2025</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1">Motivo: Assuntos pessoais</p>
+<div class="flex gap-2 mt-4">
+<button class="flex-1 px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700">Aprovar</button>
+<button class="flex-1 px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700">Reprovar</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm space-y-4">
+<h2 class="text-xl font-bold">Histórico de Folgas</h2>
+<div class="space-y-3">
+<div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-md">
+<div>
+<p class="font-medium">Bruno</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">02/10/2025</p>
+</div>
+<span class="text-xs font-semibold text-yellow-800 bg-yellow-200 dark:text-yellow-200 dark:bg-yellow-800 px-2 py-1 rounded-full">Pendente</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-md">
+<div>
+<p class="font-medium">Wanderley</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">15/09/2025</p>
+</div>
+<span class="text-xs font-semibold text-yellow-800 bg-yellow-200 dark:text-yellow-200 dark:bg-yellow-800 px-2 py-1 rounded-full">Pendente</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-md">
+<div>
+<p class="font-medium">Christiano</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">10/09/2025</p>
+</div>
+<span class="text-xs font-semibold text-yellow-800 bg-yellow-200 dark:text-yellow-200 dark:bg-yellow-800 px-2 py-1 rounded-full">Pendente</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-md">
+<div>
+<p class="font-medium">Bruno</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">08/09/2025</p>
+</div>
+<span class="text-xs font-semibold text-green-800 bg-green-200 dark:text-green-200 dark:bg-green-800 px-2 py-1 rounded-full">Aprovada</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<h2 class="text-xl font-bold mb-2">Reprovar Solicitação</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark mb-4">Reprovando solicitação de Wanderley para o dia 15/09/2025.</p>
+<div>
+<label class="block text-sm font-medium text-text-light dark:text-text-dark" for="rejection-reason">Motivo da Recusa</label>
+<textarea class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="rejection-reason" placeholder="Ex.: Equipe já reduzida nesta data." rows="4"></textarea>
+</div>
+</div>
+<div class="mt-6 flex justify-end gap-4">
+<button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 dark:bg-gray-600 dark:text-gray-200 rounded-md hover:bg-gray-300 dark:hover:bg-gray-500">Cancelar</button>
+<button class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700">Confirmar Recusa</button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm md:col-span-2 lg:col-span-3">
+<div class="grid md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<h2 class="text-xl font-bold">Registrar Produção Diária</h2>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-text-light dark:text-text-dark" for="tank1">Tanque 1 (Litros)</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="tank1" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light dark:text-text-dark" for="tank2">Tanque 2 (Litros)</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="tank2" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light dark:text-text-dark" for="tank3">Tanque 3 (Litros)</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="tank3" type="number"/>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-primary border-2 border-primary rounded-md hover:bg-primary/10">
+<span class="material-icons text-lg">add</span>
+                        Adicionar Tanque
+                    </button>
+<div class="text-lg font-bold text-center">Total do Dia: 0 Litros</div>
+<button class="w-full px-4 py-3 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary-dark">Salvar Produção</button>
+</div>
+<div class="space-y-4 bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold">Relatório Mensal</h2>
+<select class="bg-transparent border-none focus:ring-0 text-text-light dark:text-text-dark font-medium">
+<option>Junho</option>
+</select>
+</div>
+<div class="space-y-3">
+<div class="p-4 bg-white dark:bg-slate-700 rounded-lg shadow-sm">
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Total Produzido no Mês</p>
+<p class="text-2xl font-bold">544.077 L</p>
+</div>
+<div class="p-4 bg-white dark:bg-slate-700 rounded-lg shadow-sm">
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Média Diária</p>
+<p class="text-2xl font-bold">18.136 L</p>
+</div>
+<div class="p-4 bg-white dark:bg-slate-700 rounded-lg shadow-sm">
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Preço do Leite</p>
+<p class="text-2xl font-bold">R$ 2,85</p>
+</div>
+<div class="p-4 bg-white dark:bg-slate-700 rounded-lg shadow-sm">
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Faturamento Estimado</p>
+<p class="text-2xl font-bold text-green-600 dark:text-green-400">R$ 1.550.619,45</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm space-y-6">
+<h2 class="text-xl font-bold">Registrar Nascimento</h2>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium" for="ear-tag">Número / Brinco</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="ear-tag" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium" for="calf-name">Nome do Bezerro(a)</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="calf-name" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium" for="sex">Sexo</label>
+<select class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="sex">
+<option>Fêmea</option>
+<option>Macho</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium" for="birth-date">Data de Nascimento</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="birth-date" type="date"/>
+</div>
+<div>
+<label class="block text-sm font-medium" for="mother-number">Número da Mãe</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="mother-number" type="text"/>
+</div>
+<button class="w-full px-4 py-3 font-medium text-white bg-primary rounded-md hover:bg-primary-dark" type="submit">Registrar Nascimento</button>
+</form>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm md:col-span-2">
+<h2 class="text-xl font-bold mb-4">Lista de Animais</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="text-xs text-text-muted-light dark:text-text-muted-dark uppercase bg-gray-50 dark:bg-gray-700">
+<tr>
+<th class="px-6 py-3" scope="col">Número</th>
+<th class="px-6 py-3" scope="col">Nome</th>
+<th class="px-6 py-3" scope="col">Sexo</th>
+<th class="px-6 py-3" scope="col">Nascimento</th>
+<th class="px-6 py-3" scope="col">Mãe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white dark:bg-surface-dark border-b dark:border-border-dark">
+<td class="px-6 py-4">20</td>
+<td class="px-6 py-4">N/A</td>
+<td class="px-6 py-4">Macho</td>
+<td class="px-6 py-4">14/01/25</td>
+<td class="px-6 py-4">RAINHA</td>
+</tr>
+<tr class="bg-gray-50 dark:bg-gray-800 border-b dark:border-border-dark">
+<td class="px-6 py-4">21</td>
+<td class="px-6 py-4">N/A</td>
+<td class="px-6 py-4">Macho</td>
+<td class="px-6 py-4">21/01/25</td>
+<td class="px-6 py-4">MONTANHA</td>
+</tr>
+<tr class="bg-white dark:bg-surface-dark border-b dark:border-border-dark">
+<td class="px-6 py-4">23</td>
+<td class="px-6 py-4">N/A</td>
+<td class="px-6 py-4">Femea</td>
+<td class="px-6 py-4">14/01/25</td>
+<td class="px-6 py-4">LUA</td>
+</tr>
+<tr class="bg-gray-50 dark:bg-gray-800 border-b dark:border-border-dark">
+<td class="px-6 py-4">26</td>
+<td class="px-6 py-4">JOSEFA</td>
+<td class="px-6 py-4">Femea</td>
+<td class="px-6 py-4">03/01/25</td>
+<td class="px-6 py-4">NOVICA</td>
+</tr>
+<tr class="bg-white dark:bg-surface-dark border-b dark:border-border-dark">
+<td class="px-6 py-4">27</td>
+<td class="px-6 py-4">DOMESTICA</td>
+<td class="px-6 py-4">Femea</td>
+<td class="px-6 py-4">03/01/25</td>
+<td class="px-6 py-4">ANIZIA</td>
+</tr>
+<tr class="bg-gray-50 dark:bg-gray-800">
+<td class="px-6 py-4">28</td>
+<td class="px-6 py-4">SINHA</td>
+<td class="px-6 py-4">Femea</td>
+<td class="px-6 py-4">04/01/25</td>
+<td class="px-6 py-4">CRISTALINA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm space-y-6">
+<h2 class="text-xl font-bold">Controle de Diesel</h2>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Preencha os dados abaixo após abastecer o trator.</p>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium" for="your-name">Seu Nome</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="your-name" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium" for="equipment">Equipamento</label>
+<select class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="equipment">
+<option>Trator TL 75</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium" for="quantity">Quantidade Abastecida (Litros)</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="quantity" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-medium" for="hour-meter">Horímetro</label>
+<input class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="hour-meter" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium" for="application">Aplicação (Motivo do abastecimento)</label>
+<textarea class="mt-1 block w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-md shadow-sm focus:ring-primary focus:border-primary" id="application" rows="4"></textarea>
+</div>
+<button class="w-full px-4 py-3 font-medium text-white bg-primary rounded-md hover:bg-primary-dark" type="submit">Registrar Abastecimento</button>
+</form>
+</div>
+</div>
+
+</body></html>
